@@ -16,8 +16,8 @@
           <thead>
               <tr>
                   <th>Id</th>
-                  <th>Nombre</th>
-                  <th>Correo</th>
+                  <th>nombre</th>
+                  <th>correo</th>
                   <th>Contraseña</th>
                   
               </tr>
@@ -37,8 +37,8 @@
                       const row = document.createElement('tr');
                       row.innerHTML = `
                           <td>${item.id}</td>
-                          <td>${item.Nombre}</td>
-                          <td>${item.Correo}</td>
+                          <td>${item.nombre}</td>
+                          <td>${item.correo}</td>
                           <td>${item.contrasena}</td>
                       `;
                       tablaBody.appendChild(row);
@@ -54,11 +54,11 @@
      <label for="id">Id:</label>
      <input type="text" id="id" name="id" required><br><br>
      
-     <label for="Nombre">Nombre:</label>
-     <input type="text" id="Nombre" name="Nombre" required><br><br>
+     <label for="nombre">nombre:</label>
+     <input type="text" id="nombre" name="nombre" required><br><br>
 
-     <label for="Correo">Correo:</label>
-     <input type="text" id="Correo" name="Correo" required><br><br>
+     <label for="correo">correo:</label>
+     <input type="text" id="correo" name="correo" required><br><br>
      
      <label for="contrasena">Contraseña:</label>
      <input type="text" id="contrasena" name="contrasena" required><br><br>
