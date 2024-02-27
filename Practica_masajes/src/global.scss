@@ -9615,6 +9615,21 @@ h6,
   height: calc(100% + 40px);
 }
 
+.bg-appointment {
+  background: linear-gradient(rgba(33, 30, 28, 0.7), rgba(33, 40, 28, 0.7)), url(..src\assets\carousel-1.jpg), no-repeat center center;
+  background-size: cover;
+}
+
+.bg-pricing {
+  background: linear-gradient(rgba(33, 30, 28, 0.7), rgba(33, 40, 28, 0.7)), url(..src\assets\carousel-2.jpg), no-repeat center center;
+  background-size: cover;
+}
+
+.bg-jumbotron {
+  background: linear-gradient(rgba(33, 30, 28, 0.7), rgba(33, 40, 28, 0.7)), url(..src\assets\carousel-3.jpg), no-repeat center center;
+  background-size: cover;
+}
+
 @media (min-width: 992px) {
   .hours-text,
   .pricing-text,
