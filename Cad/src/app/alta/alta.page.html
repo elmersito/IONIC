@@ -1,0 +1,43 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>alta</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="row">
+    <div class="col-md-12">
+      <form (ngSubmit)="submitForm()">
+        <h1> Sign Up </h1>
+        
+        <fieldset>
+          
+          <legend><span class="number">1</span> Your Basic Info</legend>
+        
+          <label for="nombre">Nombre:</label>
+          <input type="text" id="nombre" name="nombre" [(ngModel)]="product.nombre" required>
+        
+          <label for="tipo">Tipo:</label>
+          <input type="text" id="tipo" name="tipo" [(ngModel)]="product.tipo" required>
+        
+          <label for="sku">SKU:</label>
+          <input type="text" id="sku" name="sku" [(ngModel)]="product.sku" required>
+        
+          <label for="caducidad">Caducidad:</label>
+          <input type="date" id="caducidad" name="caducidad" [(ngModel)]="product.caducidad" required>
+        
+          <label for="descripcion">Descripción:</label>
+          <textarea id="descripcion" name="descripcion" [(ngModel)]="product.descripcion" required></textarea>
+        
+          <label for="stock">Stock:</label>
+          <input type="number" id="stock" name="stock" [(ngModel)]="product.stock" required>
+          
+        </fieldset>
+    
+       
+        <button type="submit">Actualizar</button>
+        
+      </form>
+    </div>
+  </div>
+</ion-content>

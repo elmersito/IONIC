@@ -1,0 +1,21 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      App
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div id="container" >
+    <div class="login-box">
+			<div>Nutri<span>Help</span></div>
+      <ion-grid class="login" >
+        <div><input type="email" placeholder="Email"  [(ngModel)]="correo "></div>
+				<div><input type="password" placeholder="Contraseña" [(ngModel)]="contrasena"></div>
+				<div><input type="submit" value="Entrar" (click)="login()"></div>
+      </ion-grid>
+    </div>
+  </div>
+</ion-content>
+

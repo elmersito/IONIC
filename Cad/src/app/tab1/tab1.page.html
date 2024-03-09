@@ -1,0 +1,50 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Mis productos</ion-title>
+    <!--app-toolbar></app-toolbar-->
+    <ion-buttons slot="start"> <!-- Utiliza el slot "start" para alinear el botón a la izquierda -->
+        <ion-back-button defaultHref="/home"></ion-back-button> <!-- Agrega un botón de retroceso que redirige a la página de inicio -->
+    </ion-buttons>
+    <ion-button id="open-custom-dialog" >Open Custom Dialog</ion-button>
+
+    <ion-modal id="example-modal" #modal trigger="open-custom-dialog">
+      <ng-template>
+        <div class="wrapper">
+          <h1>Dialog header</h1>
+  
+
+        </div>
+      </ng-template>
+    </ion-modal>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+<h1 class="pagina-titulo">Mis productos</h1>
+<main class="grid">
+
+  <article *ngFor="let item of resp">
+    <section class="cat-content1">
+      <div class="cajaarriba">
+        <div class="nuevo"><span>{{ item.nombre }}</span></div>
+        <div class="oferta"><span>{{item.id_prod}}</span></div>
+      </div>      
+      <a class="imagen-mas" ><img class="preview-image" src=""></a>
+      <div >
+        <a class="ver-mas" (click)="openCustomDialog2(item)">Ver Más</a>
+      </div>      
+    </section>
+    <section class="cat-content2">
+      <span class="precio-principal">Categoría: {{ item.tipo }}</span> <!-- Ejemplo de cómo mostrar el tipo de producto -->
+      <span class="antes" ><span class="letra-antes" >N° producto:</span><span class="precio-antes">{{ item.sku }}</span></span>
+      <span class="descripcion">Descripción: {{ item.descripcion }}</span> <!-- Mostrar la descripción del producto -->
+      <span class="marca-referencia"><span class="marca">Existencia</span>|total:{{ item.stock}}</span> <!-- Mostrar la referencia del producto -->
+    </section>
+  </article>
+  
+  	
+      
+</main>
+
+</ion-content>

@@ -1,0 +1,610 @@
+/*Media Queries Consultas de medios*/
+// 1. Nombre y defina nuestros puntos de ruptura breakpoints. Nombré el mapa
+// 2. Escribi una lista separada por comas de la key: valor, para usar más adelante
+$breakpoints: (
+  small: 34em,
+	large: 60em,
+);
+
+// Si el selector es más ancho que el tamaño de pantalla al que estamos llamando
+@mixin bp($screen-size) {
+	// y si nuestro mapa que hemos llamado $breakpoints incluye valores (llamados $screen-size)
+	@if map-has-key($breakpoints, $screen-size) {
+		// entonces escriba una consulta anidada de Media Query que fijará ese valor como nuestro mínimo ancho de banda.
+		@media (min-width: map-get($breakpoints, $screen-size)) {
+	  		// escribir CSS dentro de esta mezcla que se aplicaría sólo a este breakpoint o superior
+				@content;
+		}
+	// si el tamaño de pantalla que estamos solicitando no existe, entonces dígame cuándo está compilado
+	} @else {
+        // Debugging
+        @warn "'#{$screen-size}' no ha sido declarado como punto de ruptura.";
+    }
+}
+////////////////////////
+//fin consulta de medios
+////////////////////////      
+/*colores opciones y fuentes*/   
+$white: white;
+$black:black;
+$color-1: #1A222F;
+$color-2: #008E74;
+$color-3: #D24335;
+$text-shadow:none; 
+$box-shadow:none;
+$radios:none;
+$border-size:0;
+
+/*opciones*/
+$box-sombra: si;//si
+$puntas-redondas:no;//si
+$tema: AlternativeBananas2;//Mountains,WintersEnd,CoteAzur,Womaninpurpledress
+$family:Roboto;//Roboto,Lobster,Comfortaa
+$family-2:sans-serif;
+$font-size: 1rem;//1rem
+$letter-spacing:0px;//0
+$text-sombra:si;//si
+$border:no;//si
+$oferta-derecha:si;//si
+$oferta-redonda:si;//si
+$ver-boton-medio:si;//si canasta con boton al medio
+$ver-boton-medio-abajo:si;// si canasta boton medio abajo
+$espacios:si;//si sin espacios laterales
+
+
+
+     @if $box-sombra == si {
+      $box-shadow:-3px 3px 25px -3px rgba(0,0,0,0.5);        
+}
+     @if $text-sombra == si {
+       $text-shadow:3px 3px 3px #000000;       
+}  
+     @if $puntas-redondas == si {        
+       $radios: 8px;
+}
+     @if $border == si {        
+       $border-size: 2px;//0
+}
+    @if $tema == Mountains { 
+      $color-1: #354242;
+      $color-2: #C9DE55;
+      $color-3: #7D9100;    
+    } @else if $tema == WintersEnd {      
+      $color-1: #342F29;
+      $color-2: #587265;
+      $color-3: #A14727;
+    } @else if $tema == CoteAzur {
+      $color-1: #00585F;
+      $color-2: #009393;
+      $color-3: #FF3800;
+    } @else if $tema == Womaninpurpledress {
+      $color-3: #CC4452;
+      $color-2: #723147;
+      $color-1: #31152B;    
+} @else if $tema == custom {
+      $color-1: #1A222F;
+      $color-2: #008E74;
+      $color-3: #D24335;
+    }
+ @else if $tema == cuban {
+      $color-1: #4C514A;
+      $color-2: #879796;
+      $color-3: #755854;
+    }
+@else if $tema == BlueGrey {
+      $color-1: #4b4e50;
+      $color-2: #aab3b6;
+      $color-3: #6e7476;
+    }
+@else if $tema == CopyofSkyblue1 {
+      $color-1: #0B486B;
+      $color-2: #79BD9A;
+      $color-3: #3B8686;
+    }
+@else if $tema == Rise {
+      $color-1: #2B3A42;
+      $color-2: #3F5765;
+      $color-3: #E74C3C;
+    }
+@else if $tema == Avoidance1 {
+      $color-1: #2C2233;
+      $color-2: #005869;
+      $color-3: #5E0042;
+    }
+@else if $tema == Avoidance2 {
+      $color-1: #005869;
+      $color-2: #8DB500;
+      $color-3: #00856A;
+    }
+@else if $tema == BacktotheBeach {
+      $color-1: #9D805A;
+      $color-2: #EBC99D;
+      $color-3: #4B809E;
+    }
+@else if $tema == BacktotheBeach {
+      $color-1: #9D805A;
+      $color-2: #EBC99D;
+      $color-3: #4B809E;
+    }
+@else if $tema == Detical {
+      $color-1: #263545;
+      $color-2: #6DBCDB;
+      $color-3: #C4273C;
+    }
+@else if $tema == BonNoche1 {
+      $color-1: #4D1B2F;
+      $color-2: #EB6528;
+      $color-3: #9E332E;
+    }
+@else if $tema == BonNoche2 {
+      $color-1: #9E332E;
+      $color-2: #FC9D1C;
+      $color-3: #EB6528;
+    }
+@else if $tema == PinkBrigadeShades1 {
+      $color-1: #660A3E;
+      $color-2: #891C56;
+      $color-3: #C93482;
+    }
+@else if $tema == Copyofvintagecard {
+      $color-1: #5C4B51;
+      $color-2: #F3B562;
+      $color-3: #F06060;
+    }
+@else if $tema == Mediterrano {
+      $color-1: #452E32;
+      $color-2: #A7CC31;  
+      $color-3: #A34B1B;
+    }
+@else if $tema == JohnnyCash {
+      $color-1: #0D0D0D;
+      $color-2: #73603D;  
+      $color-3: #BF8A49;
+    }
+@else if $tema == vintagered {
+      $color-1: #9F3818;
+      $color-2: #C33A1A;  
+      $color-3: #F84322;
+    }
+@else if $tema == Digerati {
+      $color-1: #52656B;
+      $color-2: #B8B89F;  
+      $color-3: #FF3B77;
+    }
+@else if $tema == PomegranateExplosion {  
+      $color-1: #F2594B; 
+      $color-3: #CD2C24; 
+      $color-2: #63A69F;
+    }
+@else if $tema == AlternativeBananas1 {
+      $color-1: #112F41;
+      $color-2: #4FB99F;  
+      $color-3: #068587;
+    }
+@else if $tema == AlternativeBananas2 {      
+      $color-2: #F2B134;  
+      $color-1: #068587;
+      $color-3: #ED553B;  
+    }
+
+
+/*fuentes*/
+@mixin googleFontImporter($family, $subset: 'latin', $weight:'400,500,700') {
+  // Google font Importer mixin
+  @import url(https://fonts.googleapis.com/css?family=#{$family}:#{$weight}&subset=#{$subset}); 
+}
+//importando fuente google
+@include googleFontImporter($family);
+$font-family:$family,$family-2;
+/*escalas de colores*/
+@function pal($colbase,$pal-key) { 
+$my-palette: (
+x-light: lighten($colbase, 30%),
+light: lighten($colbase, 10%),
+base:$colbase,
+dark: darken($colbase, 10%),
+x-dark: darken($colbase, 22.5%)
+  );
+  @return map-get($my-palette, $pal-key);
+}
+////////////////////////
+//fin colores opciones y fuentes
+////////////////////////
+
+//variables canastas
+//$color-bg-item:pal($color-4,x-dark);
+$color-bg-item:$white;
+$color-bordes:$color-1;
+$bordes-item:$radios;
+$sombra-item:$box-shadow;
+
+$color-txt-titulo-canasta:$color-1;
+$color-precio-principal:$color-3;
+$color-txt-antes:$color-2;
+$color-num-antes:$color-1;
+$color-txt-marca:$color-3;
+$color-txt-ref:$color-2;
+$color-txt-descripcion:$color-1;
+$color-oferta-item:$color-3;
+$color-boton-ver:$color-2;
+$color-hover:$color-1;
+$color-item-nuevo:$color-3;
+$color-fondo-canastas:$white;
+
+
+// Grid 
+.grid {
+	padding: 0 2rem; 
+	
+	// Si su navegador admite flexbox, haga lo siguiente
+	@supports ( display: flex ) {
+		display: flex;
+		flex-wrap: wrap;
+		padding: 1rem;
+		
+		@include bp( small ) {
+			justify-content: space-between;
+		}
+	}
+	
+//Si su navegador soporta grid, haga esto
+//	La cuadrícula sólo funciona cuando está habilitada en ciertos navegadores
+//	Funciona OOTB con Firefox Nightly y Safari Technical Preview
+//	No funciona en tu teléfono.
+  
+	@supports ( display: grid ) {
+		display: grid;
+		grid-template-columns: 100%;
+		grid-template-rows: auto;
+		
+		// Haga sólo 2 columnas usando la nueva unidad de fracción e incluya un espacio (gutter)
+		@include bp( small ) {
+			grid-template-columns: repeat(2,1fr);
+			grid-gap: 0.1px;
+		}	
+
+		// Cuando este por encima de nuestro breakpoint, asegúrese de que hay N columnas
+		@include bp( large ) {
+			grid-template-columns: repeat(4,1fr);
+		}	
+	}	
+}
+
+article {
+	background: $color-bg-item;
+  box-shadow:$sombra-item;  
+  border-radius:$bordes-item;
+  border:$border-size solid $color-bordes;
+	margin: 1rem 0;
+  @if $espacios==si{
+    padding: 1rem;
+  }
+  padding-bottom:2px!important;
+	
+  .cajaarriba{
+    position:relative;
+    z-index:1;
+    display:flex;
+    
+         @if $oferta-derecha == si {
+      flex-direction:row;       
+}             @else {
+      flex-direction:row-reverse;       
+}
+   
+   justify-content:space-between;
+   align-content: flex-start;
+    height:0px;
+    width:100%;
+    top:0px;
+    text-shadow:$text-shadow;
+  }
+  
+
+  .nuevo{   
+    padding:8px;
+    background-color:$color-item-nuevo;
+    height:20px;
+    border-radius:$radios;
+    span{
+      color:$white;
+    }
+  }
+  .oferta{
+    padding:10px;
+    background-color:$color-oferta-item;
+             @if $oferta-redonda == si {
+      border-radius:50%;;       
+}             @else {
+      border-radius:0;       
+}
+    
+    height:30px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    span{
+      margin-left:1.5px;
+      color:$white;
+    }
+  }
+  
+ 
+  section.cat-content1{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+  }
+ 
+ 
+ 
+	//Empecemos con un respaldo flotante.
+	//No se necesita en su mayor parte a menos que
+	// todavía soporta IE9 e inferior
+	@include bp( small ) {
+		float: left;
+		margin: 1rem;	
+		max-width: 41%;
+			
+		&:nth-child(2n+1) {
+			clear: left;
+		}
+ 
+		@supports ( display: grid ) {
+			max-width: none;
+		}
+	}
+	
+	@include bp( large ) {
+		max-width: 20%;
+
+		@supports ( display: grid ) {
+			max-width: none;
+		}
+		
+		&:nth-child(2n+1) {
+			clear: none;
+		}
+
+		&:nth-child(3n+2) {
+		//	max-width: 45%;
+			
+			@supports ( display: grid ) {
+				max-width: none;
+			}
+		}
+
+		&:nth-child(3n+1) {
+			clear: left;
+		}
+	}
+
+	//  Si su navegador admite flexbox, haga lo siguiente
+	@supports ( display: flex ) {
+		flex-basis: 100%;
+		
+		// Visualizar 2 columnas en este breakpoint
+		@include bp( small ) {
+			flex: 0 1 40%;
+		}
+		
+		//  Visualizar 3 columnas en este breakpoint
+		@include bp( large ) {
+			flex: 0 1 calc(100% * 0.25 - 1rem);
+		
+			&:nth-child(3n+2) {
+				flex: 1 0 calc(100% * 0.25 - 1rem);
+			}
+		}
+	}
+}
+
+
+
+
+
+// personalizados
+.cat-content1{
+    grid-area:content1;
+  }
+.cat-content2{
+    grid-area:content2;
+  
+  @if $ver-boton-medio == si {
+      margin-top:-15px;
+    
+}
+  @if $ver-boton-medio == si and $ver-boton-medio-abajo ==si{
+    margin-top:-5px;
+    
+  }
+  z-index:1;
+  }
+ 
+  article{
+    display: grid;
+ grid-template-columns: repeat(1,fr);
+  grid-template-areas: "content1"
+                       "content2";
+  }
+
+
+  .cat-content2{
+    position:static;
+    top:0;
+    display: grid;
+ grid-template-columns: repeat(2,fr);
+    grid-gap: 0;
+  //grid-template-rows: 7fr;
+  grid-template-areas: "descripcion descripcion"
+                       "marca-referencia marca-referencia"
+                       "antes antes"
+                       "precio-principal precio-principal";
+    
+  //width: 100%;
+  //height: 100vh;
+    text-align:center;
+    justify-content:center;
+  }
+
+  .cajaarriba{
+    grid-area:cajaarriba;
+  }
+  .imagen-mas{
+    grid-area:imagen-mas;
+  }
+  .precio-principal{
+    grid-area:precio-principal;
+  }
+  .antes{
+    grid-area:antes;
+  }
+  .descripcion{
+    grid-area:descripcion;
+  }
+  .referencia{
+    grid-area:referencia;
+  }
+  .marca{
+    grid-area:marca;
+  }
+  .ver-mas{
+    grid-area:ver-mas;
+  }
+  
+
+
+body {
+	background: $color-fondo-canastas;
+	font-family: $font-family;  
+	font-size: $font-size;
+}
+
+.pagina-titulo {
+	color: $color-txt-titulo-canasta;
+	font-size: 1.5rem;
+	margin-bottom: 0;
+	padding: .5rem 0 0;
+	text-align: center;
+}
+
+.precio-principal {
+	color:$color-precio-principal;
+	font-size: 1.5rem;
+  font-weight:bold; 
+}
+.letra-antes{
+  color:$color-txt-antes;
+  font-weight:bold; 
+}
+.precio-antes{
+  color:$color-num-antes;
+  font-weight:bold;
+  text-decoration:line-through; 
+}
+.descripcion{
+  color:$color-txt-descripcion;
+	font-size: 1.2rem;
+  font-weight:bold;
+  font-variant: small-caps;
+}
+.marca-referencia{
+  color:$color-txt-ref;
+	font-size: $font-size;
+}
+.marca{
+  color:$color-txt-marca;
+	font-size: $font-size;
+}
+.ver-mas {
+  background:$color-boton-ver;
+  //padding:0.5rem 1rem 0.5rem 1rem;
+  padding-top:8px;
+  text-align:center;
+  text-decoration:none;
+	color: $white;
+	font-weight: 700;  
+  box-shadow:$sombra-item;
+  text-shadow:$text-shadow;
+  border-radius:$bordes-item;
+  border:$border-size solid $color-bordes;
+  &:hover{
+    background:$color-hover;
+  }
+  display:none;
+  width:100%;
+  height:30px   
+      
+}
+
+@if $ver-boton-medio==si{
+.ver-mas{display:initial;}
+}
+
+img {
+	height: auto;
+	width: 100%;
+  -webkit-filter: saturate(1);
+  	filter: saturate(1);
+  
+
+}
+
+
+
+
+    .cajaabajo{
+      position:relative;
+    z-index:1;
+      display:flex;
+    width:100%;
+      //text-align:center;
+      //vertical-align:middle;
+      height:22px;
+      
+        @if $ver-boton-medio == si {
+      bottom:50%;
+      opacity:0; 
+} 
+              @if $ver-boton-medio == si and $ver-boton-medio-abajo ==si {
+      bottom:10%;         
+} 
+      
+  display:none;
+      @if $ver-boton-medio==si{
+display:flex;
+}
+}
+
+
+
+a.imagen-mas:hover + .cajaabajo,a.imagen-mas + .cajaabajo:hover{
+          opacity:1;    
+      }
+
+      ion-modal#example-modal {
+        --width: fit-content;
+        --min-width: 250px;
+        --height: fit-content;
+        --border-radius: 6px;
+        --box-shadow: 0 28px 48px rgba(0, 0, 0, 0.4);
+      }
+      
+      ion-modal#example-modal h1 {
+        margin: 20px 20px 10px 20px;
+      }
+      
+      ion-modal#example-modal ion-icon {
+        margin-right: 6px;
+      
+        width: 48px;
+        height: 48px;
+      
+        padding: 4px 0;
+      
+        color: #aaaaaa;
+      }
+      
+      ion-modal#example-modal .wrapper {
+        margin-bottom: 10px;
+      }
