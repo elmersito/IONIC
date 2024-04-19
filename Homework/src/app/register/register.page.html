@@ -1,0 +1,18 @@
+<ion-content class="custom-background">
+  <ion-title class="custom-title">Homework</ion-title>
+  <ion-item class="custom-input">
+    <ion-label class="custom-label"  position="floating">Nombre</ion-label>
+    <ion-input class="custom-label" type="text" placeholder="Nombre completo" [(ngModel)] = "data.name" required></ion-input>
+  </ion-item>
+  <ion-item class="custom-input">
+    <ion-label class="custom-label"  position="floating">Correo</ion-label>
+    <ion-input class="custom-label" type="email" placeholder="Correo" [(ngModel)] = "data.email" required></ion-input>
+  </ion-item>
+  <ion-item class="custom-input"> 
+    <ion-label class="custom-label"  position="floating">Contraseña</ion-label>
+    <ion-input class="custom-label" type="password" placeholder="Contraseña" [(ngModel)] = "data.password" required></ion-input>
+  </ion-item>
+  
+  <ion-button class="ion-padding custom-primary" expand="full" (click)="registerFireBase()">Agregar usuario</ion-button>
+  <ion-button class="ion-padding custom-login" expand="full" (click)="login()">Regresar al login</ion-button>
+</ion-content>

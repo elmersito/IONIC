@@ -1,0 +1,47 @@
+.custom-background {
+    background-color: #ffffff;
+}
+
+.custom-toolbar{
+    --background: #465973;
+    height: 90px;
+}
+
+.custom-card{
+    --background: #485171;
+}
+
+.custom-button{
+    background: none;
+}
+
+.custom-label{
+    color: white;
+    font-weight: bold;
+}
+
+.custom-text{
+    color: white;
+    font-weight: normal;
+}
+
+.custom-tabs{
+    --background: #465973;
+}
+
+.custom-title {
+   
+    font-weight: 800;
+    font-style: normal;
+    text-align: center;
+    font-size: 40px;
+    margin-top: 10px;
+    background: linear-gradient(to right, #ffffff, #465973);
+    background-clip: text;
+    -webkit-background-clip: text; /* Para compatibilidad con versiones antiguas */
+    color: transparent;
+}
+
+.custom-content{
+    overflow-y: auto;
+}

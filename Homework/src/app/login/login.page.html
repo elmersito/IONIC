@@ -1,0 +1,13 @@
+<ion-content class="custom-background">
+  <ion-title class="custom-title">Homework</ion-title>
+  <ion-item class="custom-input">
+    <ion-label class="custom-label" position="floating">Correo</ion-label>
+    <ion-input class="custom-label" type="email" placeholder="Correo" [(ngModel)]="credentials.email"></ion-input>
+  </ion-item>
+  <ion-item class="custom-input">
+    <ion-label class="custom-label"  position="floating">Contraseña</ion-label>
+    <ion-input class="custom-label" type="password" placeholder="Contraseña" [(ngModel)]="credentials.password"></ion-input>
+  </ion-item>
+  <ion-button class="ion-padding custom-primary"  expand="full" (click)="loginFireBase()">Iniciar sesión</ion-button>
+  <ion-button class="ion-padding custom-register" expand="full" (click)="register()" >Registrarse</ion-button>
+</ion-content>

@@ -1,0 +1,46 @@
+.custom-background{
+    --background: #504363;
+}
+
+.custom-title{
+    font-weight: 800;
+    font-style: normal;
+    text-align: center;
+    font-size: 40px;
+    margin-top: 80px;
+    margin-bottom: 40px;
+    --color: white;
+    background: linear-gradient(to right, #ffffff, #465973);
+    background-clip: text;
+    -webkit-background-clip: text; /* Para compatibilidad con versiones antiguas */
+    color: transparent;
+}
+
+.custom-label{
+    color: white;
+}
+
+.custom-input{
+    --background: #504363;
+    --highlight-color-focused: transparent;
+    --border-color: transparent;
+    margin-top: 0;
+}
+
+.custom-primary {
+    --background: #6773cd;
+    --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    color: white; 
+    font-weight: bold;
+  }
+
+.custom-login {
+    --background: #6773cd;
+    --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: white; 
+    font-weight: bold;
+}
+
+.custom-img{
+    width: 200px;
+}

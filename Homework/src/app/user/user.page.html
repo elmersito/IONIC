@@ -1,0 +1,21 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Usuario</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="image-container">
+    <ion-avatar>
+      <img style="width: 250px; height: 100px;" alt="Silueta de la cabeza de una persona" src="assets/profile.png"/>
+    </ion-avatar>
+  </div>
+  <ion-title class="custom-title">{{ currentUser?.name }}</ion-title>
+  <ion-title class="custom-label">Correo electrónico</ion-title>
+  <ion-title class="custom-text">{{ currentUser?.email }}</ion-title>
+  <ion-title class="custom-label">Cerrar sesión</ion-title>
+  <div class="center-items">
+    <ion-icon name="arrow-back-circle-outline" class="custom-text" size="large" (click)="logout()"></ion-icon>
+  </div>
+  
+</ion-content>

@@ -1,0 +1,27 @@
+<ion-header [translucent]="true" *ngIf="login">
+  <ion-toolbar class="custom-toolbar">
+    <ion-title class="custom-title">Homework</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="custom-background" [fullscreen]="true" *ngIf="login">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Homework</ion-title>
+    </ion-toolbar>
+  </ion-header>
+</ion-content>
+
+<ion-tabs *ngIf="login">
+  <ion-tab-bar class="custom-tabs" slot="bottom">
+    <ion-tab-button class="custom-button" tab="appointments">
+      <ion-icon name="book-outline" class="custom-label"></ion-icon>
+      <ion-label class="custom-label">Tareas</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button class="custom-button" tab="user">
+      <ion-icon name="person-circle-outline" class="custom-label"></ion-icon>
+      <ion-label class="custom-label">Usuario</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>

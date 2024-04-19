@@ -1,0 +1,46 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="custom-toolbar">
+      <ion-row>
+        <ion-col sizeMd="4" offsetMd="4">
+            <ion-img style="height: 50px;" src="assets/logo.png"></ion-img>
+            <ion-title class="custom-title">Homework</ion-title>
+        </ion-col>
+      </ion-row>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="custom-background" [fullscreen]="true">
+  <ion-list class="custom-background" *ngIf="showForm==false">
+    <ion-card class="custom-card" *ngFor="let appointment of appointments">
+      <ion-card-header>
+        <ion-card-title class="custom-label">Tarea pendiente</ion-card-title>
+        <ion-card-subtitle class="custom-label">Fecha: <span class="custom-text">{{ appointment.date }}</span></ion-card-subtitle>
+        <ion-card-subtitle class="custom-label">Hora: <span class="custom-text">{{ appointment.time }}</span></ion-card-subtitle>
+      </ion-card-header>
+    
+      <ion-card-content class="custom-text">
+        {{ appointment.notes }}
+      </ion-card-content>
+    
+      <ion-button class="custom-icon" fill="clear" (click)="deleteAppointment(appointment)">Borrar<ion-icon name="close-circle-outline" ></ion-icon></ion-button>
+    </ion-card>
+  </ion-list>
+
+  <ion-button (click)="showAddForm()" class="custom-add ion-justify-content-end" shape="round">Agregar tarea</ion-button>
+
+  <ion-card *ngIf="showForm" class="custom-card">
+    <ion-card-header>
+      <ion-card-title class="custom-label">Agregar tarea</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+        <ion-card-subtitle class="custom-label" position="stacked">Fecha</ion-card-subtitle>
+        <ion-input class="custom-text" type="date" [(ngModel)]="newAppointment.date" required></ion-input>
+        <ion-card-subtitle class="custom-label" position="stacked">Hora</ion-card-subtitle>
+        <ion-input class="custom-text" type="time" [(ngModel)]="newAppointment.time" required></ion-input>
+        <ion-card-subtitle class="custom-label" position="stacked">Tarea a asignar</ion-card-subtitle>
+        <ion-textarea class="custom-text" [(ngModel)]="newAppointment.notes" required></ion-textarea>
+    </ion-card-content>
+    <ion-button class="custom-label custom-new" (click)="addAppointment()" expand="block">Agregar tarea</ion-button>
+    <ion-button class="custom-label custom-new" (click)="cancelAddForm()" expand="block">Cancelar</ion-button>
+  </ion-card>
+  <app-footer></app-footer>
+</ion-content>
